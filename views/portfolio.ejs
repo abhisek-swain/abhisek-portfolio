@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+<%- include('partials/page-header', { header: portfolio.header }) %>
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="filter-bar" role="tablist" aria-label="Filter projects">
+      <% portfolio.categories.forEach(function(cat, i) { %>
+        <button class="filter-btn <%= i === 0 ? 'active' : '' %>" data-filter="<%= cat %>" type="button"><%= cat %></button>
+      <% }) %>
+    </div>
+    <div class="project-grid" id="projectGrid">
+      <% portfolio.projects.forEach(function(project) { %>
+        <%- include('partials/project-card', { project }) %>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

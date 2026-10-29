@@ -1,0 +1,104 @@
+<%- include('partials/head') %>
+<%- include('partials/page-header', { header: about.header }) %>
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <div class="bio reveal">
+          <% about.bio.forEach(function(p) { %><p><%= p %></p><% }) %>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="profile-card reveal">
+          <div class="avatar"><%= site.shortName %></div>
+          <h3><%= site.name %></h3>
+          <p class="text-blue mono small mb-4"><%= site.role %></p>
+          <ul class="facts">
+            <% about.quickFacts.forEach(function(f) { %>
+              <li>
+                <i class="bi <%= f.icon %>"></i>
+                <div><span><%= f.label %></span><strong><%= f.value %></strong></div>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Where I work</h2>
+    </div>
+    <div class="timeline">
+      <% about.experience.forEach(function(job) { %>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+              <h3 class="mb-0"><%= job.role %></h3>
+              <span class="chip"><%= job.period %></span>
+            </div>
+            <p class="text-blue mb-3"><%= job.company %></p>
+            <ul class="check-list">
+              <% job.points.forEach(function(pt) { %><li><%= pt %></li><% }) %>
+            </ul>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Skills</span>
+      <h2>My toolkit</h2>
+    </div>
+    <div class="row g-4">
+      <% about.skillGroups.forEach(function(group) { %>
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card reveal">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-box sm"><i class="bi <%= group.icon %>"></i></div>
+              <h3 class="mb-0"><%= group.title %></h3>
+            </div>
+            <div class="skill-tags">
+              <% group.skills.forEach(function(s) { %><span><%= s %></span><% }) %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Approach</span>
+      <h2>How I work</h2>
+    </div>
+    <div class="row g-4">
+      <% about.approach.forEach(function(a) { %>
+        <div class="col-md-4">
+          <div class="service-card reveal">
+            <div class="icon-box"><i class="bi <%= a.icon %>"></i></div>
+            <h3><%= a.title %></h3>
+            <p><%= a.text %></p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

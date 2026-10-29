@@ -1,0 +1,21 @@
+{
+  "name": "Abhisek Swain",
+  "shortName": "AS",
+  "role": "Backend Developer",
+  "tagline": "I build the engines behind e-commerce stores and custom CMS platforms.",
+  "email": "swainabhishek914@gmail.com",
+  "company": "Inflexi Technologies Private Limited",
+  "location": "India",
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "About", "url": "/about" },
+    { "label": "Portfolio", "url": "/portfolio" },
+    { "label": "Contact", "url": "/contact" }
+  ],
+  "socials": [
+    { "label": "Email", "icon": "bi-envelope-fill", "url": "mailto:swainabhishek914@gmail.com" },
+    { "label": "GitHub", "icon": "bi-github", "url": "" },
+    { "label": "LinkedIn", "icon": "bi-linkedin", "url": "" }
+  ],
+  "footerNote": "Built with Node.js, Express, EJS & Bootstrap — content served from JSON."
+}

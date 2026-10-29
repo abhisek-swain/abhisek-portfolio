@@ -1,0 +1,110 @@
+<%- include('partials/head') %>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="status-pill"><span class="pulse"></span><%= home.hero.eyebrow %></span>
+        <h1 class="hero-title">
+          <span class="hero-greet"><%= home.hero.greeting %></span>
+          <span class="gradient-text"><%= home.hero.name %></span>
+        </h1>
+        <p class="hero-role mono">
+          <span class="text-blue">&gt;</span> <span id="typedRole" data-roles='<%- JSON.stringify(home.hero.roles).replace(/'/g, "&#39;") %>'><%= home.hero.roles[0] %></span><span class="caret">_</span>
+        </p>
+        <p class="hero-intro"><%= home.hero.intro %></p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="<%= home.hero.primaryCta.url %>" class="btn btn-glow btn-lg"><%= home.hero.primaryCta.label %> <i class="bi bi-arrow-right ms-1"></i></a>
+          <a href="<%= home.hero.secondaryCta.url %>" class="btn btn-ghost btn-lg"><i class="bi bi-envelope me-1"></i> <%= home.hero.secondaryCta.label %></a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="terminal reveal">
+          <div class="terminal-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="terminal-title mono">abhisek@inflexi: ~/portfolio</span>
+          </div>
+          <div class="terminal-body mono">
+            <div><span class="t-prompt">$</span> curl <span class="t-str">localhost:3000</span>/api/abhisek</div>
+            <div class="t-muted">HTTP/1.1 <span class="t-ok">200 OK</span> · application/json</div>
+            <pre class="t-json">{
+<% const entries = Object.entries(home.terminal.response);
+   entries.forEach(function([key, val], i) {
+     const comma = i < entries.length - 1 ? ',' : '';
+     let out;
+     if (Array.isArray(val)) out = '[' + val.map(v => '<span class="t-str">"' + v + '"</span>').join(', ') + ']';
+     else if (typeof val === 'boolean') out = '<span class="t-bool">' + val + '</span>';
+     else out = '<span class="t-str">"' + val + '"</span>'; %>  <span class="t-key">"<%= key %>"</span>: <%- out %><%= comma %>
+<% }) %>}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <% home.stats.forEach(function(stat) { %>
+        <div class="stat reveal">
+          <strong class="gradient-text"><%= stat.value %></strong>
+          <span><%= stat.label %></span>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2><%= home.servicesTitle %></h2>
+    </div>
+    <div class="row g-4">
+      <% home.services.forEach(function(s, i) { %>
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card reveal">
+            <span class="service-num mono">0<%= i + 1 %></span>
+            <div class="icon-box"><i class="bi <%= s.icon %>"></i></div>
+            <h3><%= s.title %></h3>
+            <p><%= s.text %></p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="section-head d-flex flex-wrap justify-content-between align-items-end gap-3">
+      <div>
+        <span class="eyebrow">Selected work</span>
+        <h2><%= home.featuredTitle %></h2>
+      </div>
+      <a href="/portfolio" class="link-arrow">All projects <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="project-grid">
+      <% featured.forEach(function(project) { %>
+        <%- include('partials/project-card', { project }) %>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><%= home.cta.title %></h2>
+        <p><%= home.cta.text %></p>
+      </div>
+      <a href="<%= home.cta.url %>" class="btn btn-light-blue btn-lg"><%= home.cta.button %> <i class="bi bi-arrow-up-right ms-1"></i></a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

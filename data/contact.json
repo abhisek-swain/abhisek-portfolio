@@ -1,0 +1,43 @@
+{
+  "header": {
+    "eyebrow": "Contact",
+    "title": "Let's build something together",
+    "subtitle": "No forms here — just email me directly. I usually reply within a day."
+  },
+  "email": "swainabhishek914@gmail.com",
+  "intro": "Pick a topic below and your email app will open with the subject and a short starter message already filled in. Or just copy my address and write to me however you like.",
+  "topics": [
+    {
+      "icon": "bi-rocket-takeoff",
+      "title": "Start a project",
+      "text": "A new website, a custom CMS or an e-commerce store.",
+      "subject": "Project inquiry from your portfolio",
+      "body": "Hi Abhisek,\n\nI'd like to discuss a project with you.\n\nProject type:\nTimeline:\nBudget (approx.):\n\nThanks,"
+    },
+    {
+      "icon": "bi-briefcase",
+      "title": "Job opportunity",
+      "text": "Hiring a backend or e-commerce developer?",
+      "subject": "Job opportunity for a backend developer",
+      "body": "Hi Abhisek,\n\nI came across your portfolio and would like to talk about a role at our company.\n\nRole:\nCompany:\n\nRegards,"
+    },
+    {
+      "icon": "bi-bag-check",
+      "title": "Store support",
+      "text": "Help with BigCommerce or WooCommerce products and inventory.",
+      "subject": "E-commerce store support",
+      "body": "Hi Abhisek,\n\nI need help with my online store.\n\nPlatform (BigCommerce / WooCommerce / other):\nWhat I need:\n\nThanks,"
+    },
+    {
+      "icon": "bi-chat-heart",
+      "title": "Just say hi",
+      "text": "Questions, feedback or a quick hello.",
+      "subject": "Hello from your portfolio",
+      "body": "Hi Abhisek,\n\n"
+    }
+  ],
+  "availability": {
+    "status": "Open to freelance projects and full-time roles",
+    "responseTime": "Usually replies within 24 hours"
+  }
+}

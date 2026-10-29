@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "eyebrow": "Available for freelance & full-time work",
+    "greeting": "Hi, I'm",
+    "name": "Abhisek Swain",
+    "roles": ["Backend Developer", "E-commerce Specialist", "Custom CMS Builder", "Node.js & PHP Developer"],
+    "intro": "Backend developer at Inflexi Technologies, managing e-commerce websites end to end — products, inventory and every piece of store data — and building custom CMS platforms that let clients run their sites without touching code.",
+    "primaryCta": { "label": "View my work", "url": "/portfolio" },
+    "secondaryCta": { "label": "Email me", "url": "mailto:swainabhishek914@gmail.com" }
+  },
+  "terminal": {
+    "request": "GET /api/abhisek",
+    "response": {
+      "role": "Backend Developer",
+      "company": "Inflexi Technologies",
+      "stack": ["Node.js", "Express", "PHP", "Laravel", "MySQL", "MongoDB"],
+      "commerce": ["BigCommerce", "WooCommerce"],
+      "openToWork": true
+    }
+  },
+  "stats": [
+    { "value": "5", "label": "Full-stack personal projects" },
+    { "value": "20+", "label": "Tools & technologies" },
+    { "value": "4", "label": "Custom CMS platforms built" },
+    { "value": "2", "label": "E-commerce platforms managed" }
+  ],
+  "servicesTitle": "What I do",
+  "services": [
+    {
+      "icon": "bi-cart-check",
+      "title": "E-commerce Management",
+      "text": "Running BigCommerce and WooCommerce stores day to day — adding, editing and removing products, keeping inventory accurate and managing all store data."
+    },
+    {
+      "icon": "bi-layout-text-window-reverse",
+      "title": "Custom CMS Development",
+      "text": "Admin panels built around the client's content, so they can update pages, galleries, bookings and listings on their own."
+    },
+    {
+      "icon": "bi-hdd-network",
+      "title": "Backend & APIs",
+      "text": "Server-side logic with Node.js, Express, PHP and Laravel, backed by MySQL or MongoDB, with clean routes and data models."
+    },
+    {
+      "icon": "bi-palette2",
+      "title": "Themes & Frontend",
+      "text": "BigCommerce Stencil and WordPress theme customization, responsive layouts with Bootstrap, and graphics in Photoshop and Canva."
+    }
+  ],
+  "featuredTitle": "Featured projects",
+  "featuredProjects": ["photography-studio", "real-estate-portal", "ved-mandir"],
+  "cta": {
+    "title": "Have a project in mind?",
+    "text": "Whether it's a store to manage or a CMS to build from scratch, drop me an email and I'll get back to you.",
+    "button": "Start a conversation",
+    "url": "/contact"
+  }
+}

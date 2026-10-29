@@ -1,0 +1,18 @@
+<article class="project-card reveal" data-category="<%= project.category %>" style="--accent: <%= project.accent %>">
+  <a href="/portfolio/<%= project.slug %>" class="project-thumb" aria-label="<%= project.title %>">
+    <div class="browser-bar"><span></span><span></span><span></span><em class="mono">/<%= project.slug %></em></div>
+    <div class="thumb-body">
+      <i class="bi <%= project.icon %>"></i>
+      <div class="thumb-lines"><span></span><span></span><span></span></div>
+    </div>
+  </a>
+  <div class="project-info">
+    <span class="chip"><%= project.category %></span>
+    <h3><a href="/portfolio/<%= project.slug %>"><%= project.title %></a></h3>
+    <p><%= project.summary %></p>
+    <div class="tech-list">
+      <% project.tech.forEach(function(t) { %><span><%= t %></span><% }) %>
+    </div>
+    <a href="/portfolio/<%= project.slug %>" class="link-arrow">View details <i class="bi bi-arrow-right"></i></a>
+  </div>
+</article>

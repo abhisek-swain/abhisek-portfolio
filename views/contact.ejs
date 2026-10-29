@@ -1,0 +1,44 @@
+<%- include('partials/head') %>
+<%- include('partials/page-header', { header: contact.header }) %>
+
+<section class="section pt-0">
+  <div class="container">
+    <!-- Big email card -->
+    <div class="mail-hero reveal">
+      <div class="mail-icon"><i class="bi bi-envelope-open-heart"></i></div>
+      <p class="text-soft mb-2">Write to me at</p>
+      <a href="mailto:<%= contact.email %>" class="mail-address"><%= contact.email %></a>
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        <a href="mailto:<%= contact.email %>" class="btn btn-glow btn-lg"><i class="bi bi-send me-1"></i> Send an email</a>
+        <button type="button" class="btn btn-ghost btn-lg" data-copy="<%= contact.email %>"><i class="bi bi-clipboard me-1"></i> Copy address</button>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<%= contact.email %>" target="_blank" rel="noopener" class="btn btn-ghost btn-lg"><i class="bi bi-google me-1"></i> Open in Gmail</a>
+      </div>
+      <div class="availability">
+        <span><span class="pulse"></span><%= contact.availability.status %></span>
+        <span><i class="bi bi-clock-history"></i> <%= contact.availability.responseTime %></span>
+      </div>
+    </div>
+
+    <!-- Topic shortcuts (prefilled mailto links) -->
+    <div class="section-head mt-5 pt-3">
+      <span class="eyebrow">Quick start</span>
+      <h2>What's it about?</h2>
+      <p class="text-soft mt-2" style="max-width:640px"><%= contact.intro %></p>
+    </div>
+    <div class="row g-4">
+      <% contact.topics.forEach(function(t) {
+           const href = 'mailto:' + contact.email + '?subject=' + encodeURIComponent(t.subject) + '&body=' + encodeURIComponent(t.body); %>
+        <div class="col-md-6 col-lg-3">
+          <a href="<%= href %>" class="topic-card reveal">
+            <div class="icon-box"><i class="bi <%= t.icon %>"></i></div>
+            <h3><%= t.title %></h3>
+            <p><%= t.text %></p>
+            <span class="link-arrow">Compose email <i class="bi bi-arrow-up-right"></i></span>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
